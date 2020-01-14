@@ -6,7 +6,7 @@
 
 class Adafruit_FreeTouch {
  public:
-  Adafruit_FreeTouch(int p = 0, oversample_t f = OVERSAMPLE_4, series_resistor_t r = RESISTOR_0, freq_mode_t fh = FREQ_MODE_NONE);
+  Adafruit_FreeTouch(int p = 0, oversample_t f = OVERSAMPLE_4, series_resistor_t r = RESISTOR_0, freq_mode_t fh = FREQ_MODE_NONE, uint16_t cc = 0x2000, uint8_t ic = 0x3F);
   bool begin(void);
 
   uint16_t measure(void);

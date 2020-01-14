@@ -27,7 +27,7 @@
 
 #include "adafruit_ptc.h"
 
-Adafruit_FreeTouch::Adafruit_FreeTouch(int p, oversample_t f, series_resistor_t r, freq_mode_t fh) {
+Adafruit_FreeTouch::Adafruit_FreeTouch(int p, oversample_t f, series_resistor_t r, freq_mode_t fh, uint16_t cc, uint8_t ic) {
     adafruit_ptc_get_config_default(&config);
     pin = p;
     uint8_t port_offset = 0;
@@ -39,6 +39,8 @@ Adafruit_FreeTouch::Adafruit_FreeTouch(int p, oversample_t f, series_resistor_t 
     config.oversample = f;
     config.seriesres = r;
     config.freqhop = fh;
+	config.compcap = cc;
+	config.intcap = ic;
 }
 
 bool Adafruit_FreeTouch::begin(void) {
